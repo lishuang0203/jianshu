@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <h2>关注</h2>
-  </div>
+  <h2>注册</h2>
 </template>
 
 <script>
     export default {
-        name: "Subscriptions"
+        name: "Sign-up"
     }
 </script>
 

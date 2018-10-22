@@ -9,7 +9,7 @@ function resolve (dir) {
 }
 
 
-
+var webpack = require('webpack')
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -29,6 +29,15 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  // 添加代码
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      jquery: "jquery",
+      "window.jQuery": "jquery"
+    })
+  ],
   module: {
     rules: [
       {

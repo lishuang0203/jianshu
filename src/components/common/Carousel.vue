@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-bottom: 35px">
     <b-carousel id="carousel1"
                 style="text-shadow: 1px 1px 2px #333;"
                 controls

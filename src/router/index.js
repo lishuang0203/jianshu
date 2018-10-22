@@ -38,9 +38,14 @@ export default new Router({
         },
         {
           //所有专题组件
-          path: '/colletions',
+          path: '/collections',
           component: resolve => require(['../components/page/Collections.vue'], resolve),
           meta: {title: '所有专题'}
+        },
+        {
+          path:'/c/:id',
+          component: resolve =>require (['../components/common/Collection.vue'],resolve),
+          meta:{title:'所有专题'}
         },
         {
           // 个人中心组件
@@ -49,13 +54,36 @@ export default new Router({
           meta: {title: '个人中心'}
         }
       ]
-    },
 
+    },
     {
       // 写文章
       path: '/write',
       component: resolve => require(['../components/page/Write.vue'], resolve),
       meta: {title: '写文章'}
+    },
+    {
+      path:'/login',
+      component: resolve => require(['../components/page/Login.vue'], resolve),
+      meta: {title: '登录'},
+      children:[
+        {
+          path: '/',
+          component: resolve => require(['../components/page/Sign-in.vue'], resolve),
+          meta: {title: '登录'}
+        },
+        {
+          path: '/sign_in',
+          component: resolve => require(['../components/page/Sign-in.vue'], resolve),
+          meta: {title: '登录'}
+        },
+        {
+          path: '/sign_up',
+          component: resolve => require(['../components/page/Sign-up.vue'], resolve),
+          meta: {title: '注册'}
+        }
+
+      ]
     }
   ]
 })
